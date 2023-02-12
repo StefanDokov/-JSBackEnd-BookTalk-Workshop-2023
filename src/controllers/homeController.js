@@ -68,6 +68,10 @@ router.get('/details/:bookId', async (req, res) => {
 
 router.get('/edit/:bookId', async(req, res)=> {
     const booker = await Book.findById(req.params.bookId).lean();
+     
+    if (!req.user){
+      return res.redirect('/404');
+    }
 
     if (req.user._id != booker.owner){
         return res.redirect('/404');
