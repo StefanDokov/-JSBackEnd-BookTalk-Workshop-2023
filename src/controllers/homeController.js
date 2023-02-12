@@ -70,7 +70,7 @@ router.get('/edit/:bookId', async(req, res)=> {
     const booker = await Book.findById(req.params.bookId).lean();
 
     if (req.user._id != booker.owner){
-        throw Error('You are not owner of that book!');
+        return res.redirect('/404');
     }
     res.render('edit', {booker});
   });
