@@ -1,0 +1,21 @@
+
+    <section class="edit-form-container">
+
+        <form method="POST">
+            <h3>Edit Book Review</h3>
+            <label>Title</label>
+            <input type="text" name="title" class="box" value="{{booker.title}}" id="">
+            <label>Author</label>
+            <input type="text" name="author" class="box" value="{{booker.author}}" id="">
+            <label>Genre</label>
+            <input type="text" name="genre" class="box" value="Fantasy{{booker.genre}}" id="">
+            <label>Stars</label>
+            <input type="number" name="stars" class="box" value="{{booker.stars}}" id="">
+            <label>Image</label>
+            <input type="text" name="imageUrl" class="box" value="{{booker.imageUrl}}" id="">
+            <label>Review</label>
+            <textarea class="box"
+                name="review">{{booker.review}}</textarea>
+            <input type="submit" value="Edit" class="btn">
+        </form>
+    </section>
